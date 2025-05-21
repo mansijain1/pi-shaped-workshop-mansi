@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: day1-app
+  labels:
+    app: day1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: day1
+  template:
+    metadata:
+      labels:
+        app: day1
+    spec:
+      containers:
+      - name: day1-container
+        image: mj207/docker-workshop:flask-demo
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: disk
+                operator: In
+                values:
+                - "ssd"
+      tolerations:
+      - key: "dedicated"
+        operator: "Equal"
+        value: "day1"
+        effect: "NoSchedule"

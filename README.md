@@ -25,3 +25,14 @@
    * Service Discovery: Automatically manages container communication within the cluster.
    * Resource Management: Allocates CPU, memory, and storage efficiently across containers.
 
+
+DAY-2 
+1. Why do we set requests and limits for CPU/memory in a production-grade product?
+
+    * Requests ensure pods get the minimum resources they need and are scheduled properly.
+    * Limits prevent any pod from using too much and affecting others.
+    * It ensures stability, efficient performance, fair resource allocation, and cost optimization.
+
+2. When would a product team apply node affinity in Kubernetes?
+
+    Node affinity is used when you want to schedule pods on specific nodes based on labels — for reasons like hardware needs, environment isolation, or performance tuning.

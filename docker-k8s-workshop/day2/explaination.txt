@@ -1,0 +1,12 @@
+SCENARIO 1
+multinode-demo has a taint: dedicated=day1:NoSchedule
+This means no pods will be scheduled on it unless they explicitly tolerate this taint.
+
+multinode-demo-m02 has a label: disk=ssd
+The pod uses node affinity to schedule only on nodes with this label.
+
+So he pod will only be scheduled on 'multinode-demo-m02' as it matched the affinity label.
+
+SCENARIO-2 
+
+None of node has either the taint or the label, the pod will remain in a Pending state because no node satisfies the conditions.
