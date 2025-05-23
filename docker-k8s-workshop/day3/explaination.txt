@@ -1,0 +1,11 @@
+ClusterIP (Internal Access)
+
+Exposes the app internally within the Kubernetes cluster only and accessible from other pods/services inside the cluster.
+So to Access we need to use port forward using kubectl port-forward service/web-service-clusterip 8080:80 for local development. 
+Than we can see the nginx service on localhost:8080
+
+NodePort (External Access)
+
+Makes the app accessible outside the cluster on a static port.
+In this case the node port assigned is 32619 by Kubernetes default system. So we can access from any external system via the Minikube IP and assigned node port.
+http://192.168.49.2:32619

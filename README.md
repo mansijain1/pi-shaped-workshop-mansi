@@ -36,3 +36,14 @@ DAY-2
 2. When would a product team apply node affinity in Kubernetes?
 
     Node affinity is used when you want to schedule pods on specific nodes based on labels — for reasons like hardware needs, environment isolation, or performance tuning.
+
+DAY-3
+
+1. How would you expose an internal microservice (e.g., user-auth) differently than a public-facing frontend in a Kubernetes-based product?
+
+    In Kubernetes, internal microservices like user-auth are typically exposed using ClusterIP services, making them accessible only within the cluster for security and control. In contrast, public-facing services like a frontend are exposed via Ingress or LoadBalancer, allowing external user access while enabling security measures like TLS and routing rules.
+
+2. Why might a product use Ingress instead of directly exposing each microservice via LoadBalancer?
+
+    To reduce costs and resource usage, as Ingress allows multiple services to share a single external IP. 
+    It also provides centralized routing, TLS termination, and traffic management, making it easier to manage and secure external access.
