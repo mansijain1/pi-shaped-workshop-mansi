@@ -1,0 +1,19 @@
+replicaCount: 4
+
+image:
+  repository: nginx
+  tag: 1.25
+  pullPolicy: IfNotPresent
+
+containerPort: 80
+
+service:
+  type: ClusterIP
+  port: 80
+
+serviceAccount:
+  create: true
+  name: "day4"
+
+ingress:
+  enabled: false
