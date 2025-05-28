@@ -47,3 +47,13 @@ DAY-3
 
     To reduce costs and resource usage, as Ingress allows multiple services to share a single external IP. 
     It also provides centralized routing, TLS termination, and traffic management, making it easier to manage and secure external access.
+
+DAY-4
+
+1. Why is Helm important for managing configuration across different environments in a real-world product (e.g., dev, staging, prod)?
+   
+   Helm plays a key role in managing configurations across environments by enabling the reuse of common deployment templates, while allowing environment-specific settings (such as for dev, staging, and prod) through separate values files. This approach promotes consistency, simplifies maintenance, and provides version control throughout the entire deployment workflow.
+
+2. How does Helm simplify deployment rollback during a production incident?
+   
+      Helm makes rolling back deployments during a production incident easier by maintaining a versioned history of all releases. If an issue occurs, you can quickly return to a previous stable state with a simple helm rollback command. This restores both the application configuration and resources, helping to reduce downtime and simplify recovery.
